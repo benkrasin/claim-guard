@@ -1,0 +1,69 @@
+{
+  "_comment": "Example claims file for a fictional product. Run: claim-guard example/claims.json --copy src",
+  "claims": [
+    {
+      "id": "csv-export",
+      "proposedClaim": "Export any report to CSV.",
+      "surface": "marketing-site",
+      "tier": 1,
+      "state": "publicly-claimable",
+      "implementationEvidence": ["lib/export.js"],
+      "automatedTestEvidence": ["tests/export.test.js"],
+      "review": "not-required",
+      "productionVerification": "not-started",
+      "publishable": true,
+      "approvedWording": "Export any report to CSV.",
+      "bannedPhrases": []
+    },
+    {
+      "id": "scheduled-refresh",
+      "proposedClaim": "Reports refresh on a schedule you choose.",
+      "surface": "marketing-site",
+      "tier": 1,
+      "state": "publicly-claimable",
+      "implementationEvidence": ["lib/export.js"],
+      "automatedTestEvidence": ["tests/export.test.js"],
+      "review": "not-required",
+      "productionVerification": "not-started",
+      "publishable": true,
+      "approvedWording": "Reports refresh on a schedule you choose.",
+      "bannedPhrases": []
+    },
+    {
+      "id": "fastest-reporting",
+      "proposedClaim": "The fastest reporting tool on the market.",
+      "surface": "marketing-site",
+      "tier": 2,
+      "state": "internally-verified",
+      "implementationEvidence": ["lib/export.js"],
+      "automatedTestEvidence": ["tests/export.test.js"],
+      "review": "not-started",
+      "productionVerification": "not-started",
+      "publishable": false,
+      "approvedWording": "We have not benchmarked against competitors, so we do not claim to be fastest.",
+      "bannedPhrases": [
+        "fastest reporting",
+        "fastest on the market",
+        "industry-leading performance"
+      ]
+    },
+    {
+      "id": "soc2-compliant",
+      "proposedClaim": "SOC 2 Type II compliant.",
+      "surface": "marketing-site",
+      "tier": 3,
+      "state": "implemented",
+      "implementationEvidence": ["lib/export.js"],
+      "automatedTestEvidence": ["tests/export.test.js"],
+      "review": "automated-complete",
+      "productionVerification": "verified",
+      "publishable": false,
+      "approvedWording": "We follow SOC 2 practices. We have not completed a Type II audit and do not claim certification.",
+      "bannedPhrases": [
+        "SOC 2 Type II compliant",
+        "SOC 2 certified",
+        "fully compliant"
+      ]
+    }
+  ]
+}

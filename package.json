@@ -1,0 +1,32 @@
+{
+  "name": "claim-guard",
+  "version": "0.1.0",
+  "description": "Fail your build when your marketing copy outruns your evidence.",
+  "bin": {
+    "claim-guard": "bin/claim-guard.js"
+  },
+  "main": "lib/check.js",
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "example": "node bin/claim-guard.js example/claims.json --copy src"
+  },
+  "keywords": [
+    "marketing",
+    "claims",
+    "evidence",
+    "compliance",
+    "ci",
+    "guard",
+    "honesty"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
