@@ -5,7 +5,7 @@
 Zero dependencies. One Node file you can read in ten minutes.
 
 ```bash
-npx claim-guard claims.json --copy src
+npx github:benkrasin/claim-guard claims.json --copy src
 ```
 
 ```
@@ -128,7 +128,7 @@ npm run example
 ### In CI
 
 ```yaml
-- run: npx claim-guard docs/claims.json --copy src --copy content
+- run: npx github:benkrasin/claim-guard docs/claims.json --copy src --copy content
 ```
 
 ## What this is not
@@ -139,6 +139,11 @@ npm run example
 - **Not an SEO or readability tool.** It only ever says no.
 - **Not magic.** A claim file nobody maintains produces a guard that enforces
   nothing. The tool makes drift *loud*; it can't make you care.
+- **Not on npm yet.** `npx github:benkrasin/claim-guard` runs it straight from
+  this repo, which is why every example above says that and not a bare
+  `npx claim-guard`. The first draft of this README promised the bare form —
+  which 404s. Shipping a tool about overstated claims with an overstated install
+  line seemed like the wrong way to start.
 
 ## Where it came from
 
