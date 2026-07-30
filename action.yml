@@ -1,0 +1,40 @@
+name: 'Claim Guard'
+description: 'Fail your build when your marketing copy outruns your evidence.'
+author: 'benkrasin'
+
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  claims:
+    description: 'Path to the claims JSON file.'
+    required: true
+  root:
+    description: 'Base directory for resolving evidence paths. Defaults to the directory containing the claims file.'
+    required: false
+  copy:
+    description: 'Space-separated directories of public-facing copy to scan for banned phrases. Optional; without it, banned phrases are not enforced.'
+    required: false
+  quiet:
+    description: 'Print nothing on success.'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run claim-guard
+      shell: bash
+      run: |
+        args=("${{ inputs.claims }}")
+        if [ -n "${{ inputs.root }}" ]; then
+          args+=(--root "${{ inputs.root }}")
+        fi
+        for dir in ${{ inputs.copy }}; do
+          args+=(--copy "$dir")
+        done
+        if [ "${{ inputs.quiet }}" = "true" ]; then
+          args+=(--quiet)
+        fi
+        node "${{ github.action_path }}/bin/claim-guard.js" "${args[@]}"
