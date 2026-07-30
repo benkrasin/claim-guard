@@ -16,6 +16,14 @@
     "test": "node --test \"test/*.test.js\"",
     "example": "node bin/claim-guard.js example/claims.json --copy src"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benkrasin/claim-guard.git"
+  },
+  "homepage": "https://krasyn.com/what-we-dont-do",
+  "bugs": {
+    "url": "https://github.com/benkrasin/claim-guard/issues"
+  },
   "keywords": [
     "marketing",
     "claims",
